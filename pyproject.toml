@@ -1,0 +1,106 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pii-guard"
+version = "0.1.0"
+description = "Fast, accurate PII detection for LLM applications. Zero dependencies, works offline."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+authors = [
+    { name = "PII Guard Contributors" }
+]
+keywords = [
+    "pii",
+    "privacy",
+    "llm",
+    "nlp",
+    "redaction",
+    "anonymization",
+    "data-protection",
+    "gdpr",
+    "ccpa",
+    "hipaa",
+    "personally-identifiable-information",
+    "text-processing",
+    "security",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Security",
+    "Topic :: Text Processing",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Typing :: Typed",
+]
+
+# No dependencies! Pure Python stdlib
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+    "mypy>=1.0.0",
+]
+
+[project.scripts]
+pii-guard = "pii_guard.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/YOUR_USERNAME/pii-guard"
+Documentation = "https://github.com/YOUR_USERNAME/pii-guard#readme"
+Repository = "https://github.com/YOUR_USERNAME/pii-guard"
+Issues = "https://github.com/YOUR_USERNAME/pii-guard/issues"
+Changelog = "https://github.com/YOUR_USERNAME/pii-guard/blob/main/CHANGELOG.md"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/pii_guard",
+    "/tests",
+    "/examples",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["pii_guard"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
+
+[tool.black]
+line-length = 100
+target-version = ["py39", "py310", "py311", "py312"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # Pyflakes
+    "I",  # isort
+    "B",  # flake8-bugbear
+    "C4", # flake8-comprehensions
+]
+ignore = [
+    "E501",  # line too long (handled by black)
+]
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
