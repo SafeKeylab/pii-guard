@@ -255,3 +255,16 @@ Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for gui
 ## License
 
 MIT License - see [LICENSE](LICENSE) for details.
+
+## Need More?
+
+**pii-guard** is the open-source core of [SafeKeyLab](https://safekeylab.com).
+
+For production deployments, SafeKeyLab Cloud adds:
+- 🛡️ **Prompt injection detection** — 80+ attack patterns blocked
+- 🤖 **Agent security** — Tool call validation and audit trails
+- 📚 **RAG security** — Vector DB protection
+- 📋 **Compliance dashboards** — GDPR, HIPAA, SOC2 reporting
+- ☁️ **Hosted API** — <5ms latency, 99.99% uptime
+
+[Start free trial →](https://safekeylab.com)
